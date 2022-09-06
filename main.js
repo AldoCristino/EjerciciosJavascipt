@@ -29,16 +29,16 @@ borrar.addEventListener("click", function (e) {
 btnEjer1.addEventListener("click", function (e) {
     e.preventDefault();
     let resp = document.getElementById("rspEjer1");
-    resp.innerHTML = "el numero mayor del arreglo es:" + mayor();
+    resp.innerHTML = "el numero menor del arreglo es:" + menor();
 });
 
 
-function mayor() {
-    let mayor = arreglo[0];
+function menor() {
+    let menor = arreglo[0];
     for (let i = 0; i < arreglo.length; i++) {
-        if (arreglo[i] > mayor) {
-            mayor = arreglo[i]
+        if (arreglo[i] < menor) {
+            menor = arreglo[i]
         };
     }
-    return mayor;
+    return menor;
 }
