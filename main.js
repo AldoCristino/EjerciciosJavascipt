@@ -29,16 +29,23 @@ borrar.addEventListener("click", function (e) {
 btnEjer1.addEventListener("click", function (e) {
     e.preventDefault();
     let resp = document.getElementById("rspEjer1");
-    resp.innerHTML = "el numero menor del arreglo es:" + menor();
+    resp.innerHTML = repite()
 });
 
 
-function menor() {
-    let menor = arreglo[0];
-    for (let i = 0; i < arreglo.length; i++) {
-        if (arreglo[i] < menor) {
-            menor = arreglo[i]
-        };
-    }
-    return menor;
+function repite() {
+    let i =0;
+    let aux;
+    let msg = " ";
+    do {
+        aux = arreglo[i];
+        for (let a = 1; a < arreglo.length; a++) {
+            if(aux == arreglo[a]){
+                msg += `El numero ${arreglo[a]} se repite mas de una vez`
+                break;
+            }
+        }
+        i++;
+    } while (i < arreglo.ength);
+    return msg;
 }
