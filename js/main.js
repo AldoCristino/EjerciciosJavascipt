@@ -12,27 +12,29 @@ btnObtener.addEventListener("click", function (e) {
         let may = arreglo.map(function(n){
             return n = parseInt(n)
         })
-        let ma = mayor(may);
-        resp.innerHTML = `El numero mayor es el ${ma}`
-    }
-
-})//evento btnObtener
-
-function mayor(arreglo) {
-    let mayor =0
-    for (let i = 0; i < arreglo.length; i++) {
         document.getElementById("numero1").classList.remove("is-invalid")
         document.getElementById("numero1").classList.add("is-valid")
         document.getElementById("numero2").classList.remove("is-invalid")
         document.getElementById("numero2").classList.add("is-valid")
         document.getElementById("numero3").classList.remove("is-invalid")
         document.getElementById("numero3").classList.add("is-valid")
-        if(mayor < arreglo[i]) {
-            mayor = arreglo[i];
-            console.log(mayor);
+        let ma = mayor(may);
+        resp.innerHTML = `El numero menor es el ${ma}`
+    }
+
+})//evento btnObtener
+
+function mayor(arreglo) {
+    let menor=0;
+    for (let i = 0; i < arreglo.length; i++) {
+        let mayor = arreglo[i]
+        for (let a = 0; a < arreglo.length; a++) {
+            if(mayor > arreglo[a]){
+               menor = arreglo[a];
+            }            
         }
     }
-    return mayor;
+    return menor;
 }
 
 function verificarNaN(n1, n2, n3) {
