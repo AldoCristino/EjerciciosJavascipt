@@ -19,18 +19,20 @@ btnObtener.addEventListener("click", function (e) {
         document.getElementById("numero3").classList.remove("is-invalid")
         document.getElementById("numero3").classList.add("is-valid")
         let ma = mayor(may);
-        resp.innerHTML = `El numero menor es el ${ma}`
+        resp.innerHTML = `El numero mayor es el ${ma}`
     }
 
 })//evento btnObtener
 
 function mayor(arreglo) {
     let mayor = 0;
+    let aux =0
     for (let i = 0; i < arreglo.length; i++) {
-        //console.log(typeof(arreglo[i]));
-        if(mayor < arreglo[i]) {
-            mayor = arreglo[i];
-            console.log(mayor);
+        aux = arreglo[i];
+        for (let a = 0; a < arreglo.length; a++) {
+            if(aux < arreglo[a]){
+                mayor = arreglo[a];
+            }            
         }
     }
     return mayor;
