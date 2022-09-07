@@ -12,21 +12,22 @@ btnObtener.addEventListener("click", function (e) {
         let may = arreglo.map(function(n){
             return n = parseInt(n)
         })
-        let ma = mayor(may);
-        resp.innerHTML = `El numero mayor es el ${ma}`
-    }
-
-})//evento btnObtener
-
-function mayor(arreglo) {
-    let mayor =0
-    for (let i = 0; i < arreglo.length; i++) {
         document.getElementById("numero1").classList.remove("is-invalid")
         document.getElementById("numero1").classList.add("is-valid")
         document.getElementById("numero2").classList.remove("is-invalid")
         document.getElementById("numero2").classList.add("is-valid")
         document.getElementById("numero3").classList.remove("is-invalid")
         document.getElementById("numero3").classList.add("is-valid")
+        let ma = mayor(may);
+        resp.innerHTML = `El numero menor es el ${ma}`
+    }
+
+})//evento btnObtener
+
+function mayor(arreglo) {
+    let mayor = 0;
+    for (let i = 0; i < arreglo.length; i++) {
+        //console.log(typeof(arreglo[i]));
         if(mayor < arreglo[i]) {
             mayor = arreglo[i];
             console.log(mayor);
